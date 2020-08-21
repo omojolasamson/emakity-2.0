@@ -1,0 +1,22 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>All Category</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <div class="container">
+      <div *ngFor="let cate of categoryFullData;  let i = index;">
+        <ion-row>
+          <ion-col col-4>
+            <img src="{{baseUrlImage}}{{cate.cateimg}}">
+          </ion-col>
+          <ion-col col-8  (click)="opencategory(cate.id, cate.categry)">
+            <p>{{cate.categry}}</p>
+            <p>{{cate.catedes}}</p>
+          </ion-col>
+        </ion-row>
+      </div>
+  </div>
+</ion-content>

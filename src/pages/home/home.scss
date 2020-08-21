@@ -1,0 +1,272 @@
+page-home {
+  font-family: Montserrat;
+
+  .toolbar{
+    min-height: 60px;
+  }
+  
+  @font-face {
+    font-family: 'LeckerliOne';
+    font-style: semi-bold;
+    font-weight: 600;
+    src: url('../assets/fonts/Montserrat.ttf');
+    }
+
+  .toolbar-title {
+    color: #ffffff;
+    font-family: Montserrat;
+  }
+
+  .bar-button {
+    color: #ffffff;
+  }
+
+  .welcome-background {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-size: cover;
+    background-position: cover;
+    position: absolute;
+  }
+
+  .discount {
+    font-size: 12px;
+    text-decoration: line-through;
+  }
+
+  .slides1 {
+    height: 28%;
+    position: relative;
+  }
+
+  .category{
+    float: left;
+    margin-left: 10px;
+    font-size: 1.8rem;
+  }
+
+  .viewall{
+    float: right;
+    font-size: 1.4rem;
+    margin-right: 5px;
+    padding: 2px 3px;
+    background: #3ac746;
+    color:#ffffff;
+    border-radius: 5px;
+  }
+
+  .prd{
+    margin-left:10px;
+    float: left;
+    font-size: 1.8rem;
+  }
+
+  .offers button{
+    float: right;
+    margin-top:1.5rem;
+    margin-right:8px;
+    text-align:right;
+    color:#ffffff;
+    padding: 3px 10px;
+    font-size: 1.5rem;
+    background: #fd4449;
+    border-radius: 5%;
+    border:none;
+    height: auto;
+    text-transform: none;
+  }
+
+  .location{
+    background: #3ac746;
+    color: #ffffff;
+  }
+
+  .location .label{
+    margin:0;
+    margin-top:7px;
+    color:#ffffff;
+  }
+
+  .select-icon{
+   display: none;
+  }
+
+  .location .item{
+    border: 0;
+  }
+
+  .location .select{
+    margin:0;
+    padding:0;
+    font-size: 1.2rem;
+  }
+
+  .off{
+    color: #3ac746;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
+  .outstock{
+    color: #fd4449;
+  }
+
+  .price span{
+    color: #909090;
+    text-decoration: line-through;
+  }
+
+  .offers{
+    -webkit-animation: pulse linear 1s infinite;
+    animation: pulse linear 1s infinite;
+  }
+  @-webkit-keyframes pulse {
+    0% { opacity: 1; } 
+    50% { opacity: .1; } 
+    100% { opacity: 1; }
+  }
+  @keyframes pulse {
+    0% { opacity: 1; } 
+    50% { opacity: .1; } 
+    100% { opacity: 1; }
+  }
+
+  /////////////////////////////////////
+
+  ion-scroll[scrollX] {
+    white-space: nowrap;
+    .scroll-item {
+      display: inline-block;
+    }
+    .scroll-item p {
+      width: 70px;
+      padding: 8px 0px 0px 0px;
+      margin: 0;
+      overflow: hidden;
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin: 0 8px;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .bar-button{
+    font-size: 2rem;
+  }
+  
+
+  .itemimg {
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    margin: 0px 10px;
+  }
+
+  .cartbadge ion-badge{
+    padding:2px 5px;
+    background: #f1060e;
+  }
+
+  ////////////////////////////////////////////////////////
+
+  .homeproducts {
+    width: 95%;
+    padding: 0;
+    margin: 0;
+    column-count: 2;
+    column-fill: auto;
+    text-align: center;
+  }
+
+  .card {
+    width: 100%;
+    margin: 10px 10px 0px 10px;
+    padding: 10px;
+    display: inline-block;
+    box-shadow: none;
+    border: 1px solid #ededed;
+  }
+
+  .card-header {
+    padding: 2px;
+  }
+
+  .card-content {
+    padding: 0;
+  }
+
+  .p-2 {
+    height:14rem;
+    padding: 1rem;
+    object-fit: scale-down;
+  }
+
+  .status{
+    background: #3ac746;
+    text-align: right;
+    margin:0;
+    padding:2px 10px;
+    font-family: Montserrat;
+    border-top: 1px solid #31b63c;
+    font-size: 1.5rem;
+    color: #ffffff;
+  }
+
+  .status a{
+    -webkit-animation: fadeIn linear 1s  infinite;
+    animation: fadeIn linear 1s  infinite;
+}
+
+  .status a{
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .text-center {
+    font-family: Montserrat;
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+
+  .quantity {
+    text-align: left;
+    font-size: 1.2rem;
+    color: #444444;
+    font-weight: 500;
+  }
+
+  .price {
+    text-align: left;
+    font-size: 1.2rem;
+    color: #fd4449;
+    font-weight: 500;
+  }
+
+  .qty{
+    display: inline-flex;
+    vertical-align: middle;
+  }
+  
+
+  .qty button:nth-child(2){
+    background: #ffffff;
+  }
+
+  .btn-cart {
+    text-align: left;
+  }
+
+  .button {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    padding: 1.5rem;
+    background: #3ac746;
+    color:#ffffff;
+    font-weight: bold;
+  }
+
+}

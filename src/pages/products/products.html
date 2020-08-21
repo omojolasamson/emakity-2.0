@@ -1,0 +1,39 @@
+<ion-header >
+<ion-navbar no-border-bottom>
+	  <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  	<ion-title>{{categoryname}}</ion-title>
+
+    <ion-buttons end class="cartbadge">
+        <button ion-button (click)="gotocart()">
+            <ion-icon name="ios-cart"></ion-icon>
+          </button><ion-badge item-end>{{cartCounterManager()}}</ion-badge>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+  
+  
+<ion-content no-padding>
+  <div class="cateproduct">
+    <ion-card *ngFor="let item of categoryFullData;  let i = index;">
+      <div class="off" *ngIf="item.mrp != item.price"><span *ngIf="item.instock == 'YES' ">{{ ((item.mrp - item.price) / item.mrp) * 100 | number : '1.0-0'}}% OFF</span> <span *ngIf="item.instock == 'NO' " class="outstock">OUT OF STOCK</span></div>
+        <img (click)="openProductDetailPage(item.id,item.name,item.image,item.description,item.quantity,item.quantitytype,item.price, item.mrp, item.instock)" class="p-2" src="{{baseUrlImage}}{{item.image}}">
+          <ion-card-header>
+            <h2 class="text-center">{{item.name}}</h2>
+          </ion-card-header>
+          <ion-card-content>
+            <div class="quantity">{{item.quantity}} {{item.quantitytype}}</div> 
+            <div class="price">{{item.price | number }} fg&nbsp;&nbsp; <br> <span>{{item.mrp | number }} fg</span></div>
+            <div class="qty" *ngIf="chkckt(item.id)">
+              <button round ion-button color="primary" (click)="changeProductQty(item.id,-1)"><b class="cstm">-</b></button>
+              <button round>{{getitemQuantity(item.id)}}</button>
+              <button round ion-button color="primary" (click)="changeProductQty(item.id,1)" ><b  class="cstm">+</b></button>  
+            </div>
+            <button round  [disabled]="item.instock == 'NO'" *ngIf="!chkckt(item.id)" ion-button (click)="addToCart(item.id,item.name,item.quantity,item.quantitytype, item.price, item.image)">{{ "ADD_TO_CART" | translate }}</button>
+          </ion-card-content>
+     </ion-card>
+</div>
+
+  </ion-content>
+

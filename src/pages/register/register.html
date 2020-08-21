@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'Registerpage_title' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding style="background-image: url(././assets/imgs/bg.png);background-color:white;">
+  <div class="register">
+    <img src="././assets/imgs/wgs-logo.png" alt="">
+    <h3>{{ 'appname' | translate }}</h3>
+    <div class="registerinput">
+
+        <ion-item>
+            <ion-label fixed color="primary"> {{ 'Registerpage_name' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed color="primary"> {{ 'Registerpage_mobile' | translate }}</ion-label>
+          <ion-input type="number"  [(ngModel)]="userData.mobile"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed color="primary"> {{ 'Registerpage_address' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="userData.address"></ion-input>
+        </ion-item>
+
+    <ion-item>
+      <ion-label fixed color="primary"> {{ 'Registerpage_email' | translate }}</ion-label>
+    <ion-input type="email"  [(ngModel)]="userData.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed color="primary"> {{ 'Registerpage_password' | translate }}</ion-label>
+  <ion-input type="password"  [(ngModel)]="userData.password"></ion-input>
+  </ion-item>
+
+  </div>
+  <div class="btn-register"><button ion-button round (click)="register()">&nbsp;{{ 'Registerpage_register' | translate }}</button></div>
+  <h6>{{ 'Registerpage_logintext' | translate }} <span><a href="#" (click)="onlogin()">{{ 'Registerpage_login' | translate }}</a></span></h6>
+  </div>
+  </ion-content>

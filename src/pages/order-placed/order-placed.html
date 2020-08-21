@@ -1,0 +1,96 @@
+
+<ion-header >
+    <ion-navbar>
+      <button ion-button menuToggle icon-only>
+        <ion-icon name="menu" style="color:#fff; "></ion-icon>
+      </button>
+      <ion-title style="color:#fff; ">{{ 'Orderdetailspage_title' | translate }}</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+  
+      <div>
+          <ion-item no-padding clear>
+            <ion-row >
+                <ion-col >
+                    <div style="font-weight: bold">{{ 'Orderdetailspage_detail' | translate }}</div>
+                  </ion-col>
+              <ion-col>
+                <p>{{ 'Orderdetailspage_orderid' | translate }}: {{viewData.orderid}}</p>
+                <p>{{ 'Orderdetailspage_placedon' | translate }} </p>
+                <p>{{viewData.ordertime}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-item>  
+  
+          <ion-item no-padding clear>
+              <ion-row >
+                <ion-col >
+                  <div style="font-weight: bold">{{ 'Orderdetailspage_paymode' | translate }}</div>
+                </ion-col>
+                <ion-col>
+                  <p>COD</p>
+                </ion-col>
+              </ion-row>
+          </ion-item>
+  
+          <ion-item no-padding clear>
+              <ion-row >
+                <ion-col >
+                  <div style="font-weight: bold">{{ 'Orderdetailspage_shippingaddress' | translate }}</div>
+                </ion-col>
+                <ion-col >
+                    <p >{{viewData.area}}</p>
+                    <p >{{viewData.address}}</p>
+                  </ion-col>
+              </ion-row>
+          </ion-item>
+  
+          <ion-item no-padding clear  no-lines>
+              <ion-row >
+                <ion-col>
+                  <div style="font-weight: bold">{{ 'Orderdetialspage_contact' | translate }}</div>
+                </ion-col>
+                <ion-col >
+                    <p>{{viewData.mobile}}</p>
+                  </ion-col>
+                </ion-row>
+          </ion-item>
+          <div class="cartitems">
+              <p>{{ 'Orderdetailspage_cartitems' | translate }}</p>
+              <ion-grid>
+                <ion-row>
+                  <ion-col>{{ 'Orderdetailspage_item' | translate }}</ion-col>
+                  <ion-col>{{ 'Orderdetailspage_type' | translate }}</ion-col>
+                  <ion-col>{{ 'Orderdetailspage_overallqty' | translate }}</ion-col>
+                  <ion-col>{{ 'Orderdetailspage_price' | translate }}</ion-col>
+                </ion-row>
+                <ion-row *ngFor="let c of orderDetail; let i = index">
+                  <ion-col> {{ c.itemname }} </ion-col>
+                  <ion-col> {{ c.itemquantity }} {{ c.itemquantitytype }} </ion-col>
+                  <ion-col> {{ c.Mquantity }}</ion-col>
+                  <ion-col> {{ c.itemprice * c.Mquantity | number }} fg </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col></ion-col>
+                  <ion-col></ion-col>
+                  <ion-col>{{ 'Orderdetailspage_shipping' | translate }}</ion-col>
+                  <ion-col>{{viewData.shipping | number }} fg</ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col></ion-col>
+                  <ion-col></ion-col>
+                  <ion-col>{{ 'Orderdetailspage_coupon' | translate }}</ion-col>
+                  <ion-col>{{viewData.couponprice | number }} fg</ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col></ion-col>
+                  <ion-col></ion-col>
+                  <ion-col>{{ 'Orderdetailspage_total' | translate }}</ion-col>
+                  <ion-col>{{viewData.total | number }} fg</ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+        </div>
+  </ion-content>

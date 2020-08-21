@@ -1,0 +1,126 @@
+.products {
+  font-family: Montserrat;
+}
+
+.toolbar-title {
+  color: #ffffff;
+}
+
+.bar-button {
+  color: #ffffff;
+}
+
+.cartbadge ion-badge{
+  padding:2px 5px;
+  background: #f1060e;
+}
+
+.itemimg {
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  border-radius: 50%;
+  border: 1px solid #eeeeee;
+  margin: 0px 10px;
+}
+
+.cateproduct {
+  width: 95%;
+  padding: 0;
+  margin: 0;
+  column-count: 2;
+  column-fill: auto;
+  font-family: Montserrat;
+  text-align: center;
+}
+
+.cateproduct .card {
+  width: 100%;
+  margin: 10px 10px 0px 10px;
+  padding: 20px;
+  display: inline-block;
+}
+
+.cateproduct .card-header {
+  padding: 2px;
+}
+
+.cateproduct .card-content {
+  padding: 0;
+}
+
+.cateproduct .price span{
+  color: #909090;
+  text-decoration: line-through;
+}
+
+.cateproduct .off{
+  color: #3ac746;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.cateproduct .outstock{
+  color: #fd4449;
+}
+
+.cateproduct .p-2 {
+  height: 12rem;
+  width: 30rem;
+  padding: 1.5rem 0.8rem;
+  object-fit: scale-down;
+}
+
+.cateproduct .text-center {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.6rem;
+}
+
+.cateproduct .text-center {
+  font-family: Montserrat;
+  text-align: left;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.cateproduct .quantity {
+  text-align: left;
+  font-size: 1.2rem;
+  color: #444444;
+  font-weight: 500;
+}
+
+.cateproduct .price {
+  text-align: left;
+  font-size: 1.2rem;
+  color: #fd4449;
+  font-weight: 500;
+}
+
+.cateproduct .qty{
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.cateproduct .qty button:nth-child(2){
+  background: #ffffff;
+}
+
+.bar-button{
+  font-size: 2rem;
+}
+
+.cateproduct .btn-cart {
+  text-align: center;
+}
+
+.cateproduct .button {
+  font-size: 1.2rem;
+    margin-top: 10px;
+    padding: 1.5rem;
+    background: #3ac746;
+    color:#ffffff;
+    font-weight: bold;
+}

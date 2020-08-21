@@ -1,0 +1,36 @@
+page-intro {
+
+    .container{
+        width: 80%;
+        margin: 10rem auto;
+        text-align: center;
+    }
+
+    .container img{
+        width: 12rem;
+    } 
+
+    .container h3{
+        font-family: Montserrat;
+        font-size: 2.2rem;
+    }
+
+    .links{
+        width: inherit;
+        margin:0px auto;
+        position: fixed;
+        bottom: 0;
+        margin-bottom: 12rem;
+        text-align: center;
+    } 
+
+
+    .links a{
+        padding: 2rem;
+    }
+
+    p{
+        font-weight: 1rem;
+    }
+
+}

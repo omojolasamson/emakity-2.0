@@ -1,0 +1,80 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Payment</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+
+
+  <ion-card (click)="onCod()">
+    <ion-row>
+      <ion-col col-3>
+        <ion-icon name="cs-cod"></ion-icon>
+      </ion-col>
+      <ion-col col-9>
+        <h2>Cash On Delivery</h2>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+
+  <ion-card (click)="oncard()">
+    <ion-row>
+      <ion-col col-3>
+        <ion-icon name="cs-pos"></ion-icon>
+      </ion-col>
+      <ion-col col-9>
+        <h2>Card on Delivery</h2>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card (click)="payWithPaypal()">
+    <ion-row>
+      <ion-col col-3>
+        <ion-icon name="cs-paypal"></ion-icon>
+      </ion-col>
+      <ion-col col-9>
+        <h2>Paypal (Braintree)</h2>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card (click)="handlerOpen()">
+    <ion-row>
+      <ion-col col-3>
+        <ion-icon name="cs-card"></ion-icon>
+      </ion-col>
+      <ion-col col-9>
+        <h2>Credit & Debit Cards</h2>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card (click)="onstore()">
+    <ion-row>
+      <ion-col col-3>
+        <ion-icon name="cs-shop"></ion-icon>
+      </ion-col>
+      <ion-col col-9>
+        <h2>Store Pickup</h2>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card (click)="payrazorpay()">
+    <ion-row>
+      <ion-col col-3>
+        <ion-icon name="cs-card"></ion-icon>
+      </ion-col>
+      <ion-col col-9>
+        <h2>Indian Payment Gateway</h2>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+</ion-content>

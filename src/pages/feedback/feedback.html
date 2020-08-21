@@ -1,0 +1,21 @@
+<ion-header >
+
+  <ion-navbar>
+    <ion-title style="color:#fff;">{{ 'Feedbackpage_title' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form [formGroup]="todo" (ngSubmit)="logForm()">
+        <ion-item>
+            <ion-label floating color="primary">{{ 'Feedback_youmsg' | translate }}</ion-label>
+              <ion-textarea rows="10" formControlName="fmsg"></ion-textarea>
+        </ion-item>
+        <div class="feedbackbtn">
+        <button ion-button round type="submit" [disabled]="!todo.valid">{{ 'Feedback_submit' | translate }}</button>
+      </div>
+      </form>
+</ion-content>
+

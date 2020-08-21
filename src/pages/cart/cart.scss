@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'LeckerliOne';
+  font-style: semi-bold;
+  font-weight: 600;
+  src: url('../assets/fonts/LeckerliOne-Regular.ttf');
+  }
+
+  .back-button{
+    color:  #ffffff;
+  }
+
+.col {
+  font-family: Montserrat;
+  font-weight: 500;
+}
+
+.footer {
+  background-color: #3ac746;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+}
+
+.emptycart{
+  width:60%;
+  font-size: 2rem;
+  font-family: Montserrat;
+  text-align: center;
+  margin:8rem auto;
+}
+
+.emptycart img{
+  width:12rem;
+}
+
+.emptycart p{
+  font-family: LeckerliOne;
+  font-size: 2.5rem;
+  color: #3ac746;
+}
+
+.grid{
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+.DeliveryCharges{
+  color: #f53d3d;
+}
+
+.grandtotal{
+  color: #3ac746;
+}
+
+.cartitems{
+  padding: 5px;
+  text-align: center;
+}
+
+.cartitems img{
+  width: 6rem;
+}
+
+.cartitems p{
+  font-family: LeckerliOne;
+  font-size: 2rem;
+}
+
+.cartitems ion-row{
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.noborder ion-row{
+  border-bottom: 0px;
+}
+
+.updwnbtn button{
+  border-radius: 10%;
+}
+
+.coupon{
+  color:#f1ce2f;
+}
+
+.coupons{
+  padding: 0px 10px;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.coupons p{
+  padding: 5px 10px;
+  text-align: center;
+  background: rgb(251, 251, 251);
+  font-family: lato;
+  border: 1px dashed #7BBA42;
+  display:  inline-block;
+  margin-right: 10px;
+}

@@ -1,0 +1,29 @@
+<ion-header >
+
+  <ion-navbar>
+    <ion-title style="color:#fff;">{{ 'Contactpage_title' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form [formGroup]="todo" (ngSubmit)="logForm()">
+        <ion-item>
+            <ion-label floating color="primary"> {{ 'Contactpage_name' | translate }}</ion-label>
+          <ion-input type="text" formControlName="cname"></ion-input>
+        </ion-item>
+          <ion-item>
+              <ion-label floating color="primary">{{ 'Contactpage_mobile' | translate }}</ion-label>
+              <ion-input type="number" formControlName="cmobile" max="10"></ion-input>
+          </ion-item>
+        <ion-item>
+            <ion-label floating color="primary">{{ 'Contactpage_message' | translate }}</ion-label>
+              <ion-textarea rows="10" formControlName="cmsg"></ion-textarea>
+        </ion-item>
+        <div class="contactbtn">
+        <button ion-button round type="submit" [disabled]="!todo.valid">{{ 'Contactpage_send' | translate }}</button>
+      </div>
+      </form>
+</ion-content>
+

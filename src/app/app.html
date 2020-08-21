@@ -1,0 +1,77 @@
+<ion-menu [content]="content" type="overlay">
+  <ion-content class="menubar">
+    <ion-list class="mainmenu">
+
+      <div class="profile">
+        <ion-row>
+          <ion-col col-4><img src="./assets/imgs/person.png" alt=""></ion-col>
+          <ion-col col-8>
+
+            <p>{{ 'Homepage_Hi' | translate }} ,  {{fname}}</p>
+            <p><a (click)="dologout()" *ngIf="fname != 'Client'" href="">&nbsp;&nbsp;{{ 'Homepage_logout' | translate }}</a> <a *ngIf="fname == 'Client'" href="#" (click)="dologin()">{{ 'Homepage_login' | translate }}</a></p>
+            
+          </ion-col>
+        </ion-row>
+      </div>
+      <ion-item no-lines class="menuitem">
+        <button ion-button clear (click)="onclickHome()" menuToggle>
+          &nbsp;&nbsp;<p>{{ 'Menupage_home' | translate }}</p>
+        </button>
+      </ion-item>
+      
+      <ion-item no-lines class="menuitem">
+        <button ion-button clear (click)="onclickcategory()" menuToggle>
+          &nbsp;&nbsp;<p>{{ 'Menupage_category' | translate }}</p>
+        </button>
+      </ion-item>
+
+      <ion-item no-lines class="menuitem" *ngIf="checkLogin()">
+        <button ion-button clear (click)="onclickMyOrder()" menuToggle>
+          &nbsp;&nbsp;<p>{{ 'Menupage_myorders' | translate }}</p>
+        </button>
+      </ion-item>
+
+      <ion-item no-lines class="menuitem">
+        <button ion-button clear (click)="openoffers()" menuToggle>
+          &nbsp;&nbsp;<p>{{ 'Menupage_offers' | translate }}</p>
+        </button>
+      </ion-item>
+
+      <ion-item no-lines class="menuitem">
+        <button ion-button clear (click)="onclickNoti()" menuToggle>
+          &nbsp;&nbsp;<p>{{ 'Menupage_notifications' | translate }}</p>
+        </button>
+      </ion-item>
+
+      <ion-item no-lines class="menuitem" *ngIf="checkLogin()">
+        <button ion-button clear (click)="openContact()" menuToggle>
+          &nbsp;&nbsp;<p>{{ 'Menupage_contactus' | translate }}</p>
+        </button>
+      </ion-item>
+
+      <ion-item no-lines class="menuitem" *ngIf="checkLogin()">
+        <button ion-button clear (click)="openfeedback()" menuToggle>
+          &nbsp;&nbsp;<p>{{ 'Menupage_feedback' | translate }}</p>
+        </button>
+      </ion-item>
+
+      <ion-item no-lines class="menuitem">
+        <button ion-button clear (click)="openterms()" menuToggle>
+          &nbsp;&nbsp;<p>{{ 'Menupage_terms' | translate }}</p>
+        </button>
+      </ion-item>
+
+      <ion-item no-lines class="menuitem">
+        <button ion-button clear (click)="openprivacy()" menuToggle>
+          &nbsp;&nbsp;<p>{{ 'Menupage_privacy' | translate }}</p>
+        </button>
+      </ion-item>
+
+    </ion-list>
+
+
+    
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

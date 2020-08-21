@@ -1,0 +1,37 @@
+page-payment {
+    .braintree-methods--active:not(.braintree-methods--edit) .braintree-method--active {
+        border-color: #f0860e;
+    }  
+    ion-label[fixed] {
+        flex: 0 0 132px;
+    }
+    button {
+        background-color: green;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 40%;
+        align-self: center;
+      }
+
+      button:disabled {
+        background-color: rgb(182, 235, 191);
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        cursor: not-allowed;
+      }
+      .error {
+        color: rgb(223, 62, 62);
+        font-size: 11px;
+      }
+    
+      
+}

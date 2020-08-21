@@ -1,0 +1,62 @@
+<ion-header >
+    <ion-navbar>
+      <button ion-button menuToggle icon-only>
+        <ion-icon name="menu" style="color:#fff; "></ion-icon>
+      </button>
+      <ion-title style="color:#fff; ">{{ 'Myorderpage_title' | translate }}</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+  <ion-content no-padding>
+
+    <div *ngIf="showtxt">
+        <ion-grid>     
+          <ion-row class="emptycart">
+            <ion-col>
+              <p>There are no Products in your Orderlist!</p></ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    
+      <ion-list *ngIf="showHisdata">
+        <ion-card no-padding *ngFor="let item of orderdata;  let i = index;">
+          <ion-row class="orderholder">
+            <ion-col>
+              <h2 class="orderid">{{ 'Myorderpage_orderid' | translate }}: {{item.orderid}}</h2>
+              <h3 class="ordertime">{{ 'Myorderpage_placedon' | translate }} <span>{{item.ordertime | date}}</span></h3>
+              <hr>
+              <ion-row>
+                <ion-col>
+                  <p *ngIf="item.status == 'Received'"><img src="././assets/imgs/received.png">{{ 'Myorderpage_received' | translate }}</p>
+                  <p *ngIf="item.status == 'Confirmed'"><img src="././assets/imgs/confirm.png">{{ 'Myorderpage_confirm' | translate }}</p>
+                  <p *ngIf="item.status == 'Preparing'"><img src="././assets/imgs/process.png">{{ 'Myorderpage_prepare' | translate }}</p>
+                  <p *ngIf="item.status == 'On Way'"><img src="././assets/imgs/deliver.png">{{ 'Myorderpage_onway' | translate }}</p>
+                  <p *ngIf="item.status == 'Delivered'"><img src="././assets/imgs/delivered.png">{{ 'Myorderpage_delivered' | translate }}</p>
+                  <p *ngIf="item.status == 'Cancelled'"><img src="././assets/imgs/cancel.png">{{ 'Myorderpage_cancel' | translate }}</p>
+                </ion-col>
+                <br>
+                <ion-col>
+                  <br>
+                    <p>{{ 'Myorderpage_deliverycode' | translate }}</p>
+                    <p>{{item.dcode}}</p>
+                    <p>{{ 'Myorderpage_deliveryperson' | translate }}</p>
+                    <p>{{item.dname}}</p>
+                    <p><a href="tel:{{item.dmobile}}">{{item.dmobile}}</a></p>
+                    <p></p>
+                    <p></p>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+          <ion-row >
+            <ion-col>
+              <button ion-button icon-left clear (click)="openOrderDetailPage(item.orderid,item.fname,item.lname,item.area,item.address,item.mobile, item.couponprice, item.shipping, item.total, item.ordertime)">
+                <div>{{ 'Myorderpage_viewdetails' | translate }}</div>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-card>   
+      </ion-list>
+
+</ion-content>

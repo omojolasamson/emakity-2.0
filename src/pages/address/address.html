@@ -1,0 +1,59 @@
+<ion-header >
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name="menu" style="color:#fff; "></ion-icon>
+    </button>
+    <ion-title style="color:#fff; ">{{ 'Deliverypage_title' | translate }}</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="getgeolocation()">
+        <ion-icon name="md-locate" style="color:#fff;"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding class="formdiv">
+    <ion-item>
+      <ion-label stacked color="primary">{{ 'Deliverypage_name' | translate }}</ion-label>
+      <ion-input type="text" required [(ngModel)]="userData.fname"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">{{ 'Deliverypage_city' | translate }}</ion-label>
+      <ion-input type="text" required [(ngModel)]="userData.city"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">{{ 'Deliverypage_area' | translate }}</ion-label>
+      <ion-select [(ngModel)]="userData.area">
+        <ng-container *ngFor="let area of areaData;  let i = index;">
+          <ion-option [value]="area.city">{{area.city}}</ion-option>
+        </ng-container>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">{{ 'Deliverypage_address' | translate }}</ion-label>
+      <ion-textarea rows="5" required [(ngModel)]="userData.address"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">{{ 'Deliverypage_mobile' | translate }}</ion-label>
+      <ion-input type="number" required [(ngModel)]="userData.mobile"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">{{ 'Deliverypage_dtype' | translate }}</ion-label>
+      <ion-select [(ngModel)]="userData.dtype">
+        <ion-option value="8AM-10AM">8AM-10AM</ion-option>
+        <ion-option value="12AM-2PM" selected="true">12AM-2PM</ion-option>
+        <ion-option value="5PM-7PM" selected="true">5PM-7PM</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <div class="subbtn">
+      <button ion-button round (click)="onSubmit()">
+        {{ 'Deliverypage_nextbtn' | translate }}
+      </button>
+    </div>
+</ion-content>

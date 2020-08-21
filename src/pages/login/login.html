@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name="menu" style="color:#fff; "></ion-icon>
+    </button>
+    <ion-title style="color:#fff; ">{{ 'loginpage_title' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+<div class="login">
+  <img src="././assets/imgs/wgs-logo.png" alt="">
+  <h3>{{ 'appname' | translate }}</h3>
+  <div class="logininput">
+  <ion-item>
+    <ion-label fixed color="primary"> {{ 'loginpage_mobile' | translate }}</ion-label>
+  <ion-input type="text" [(ngModel)]="userData.mobile"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label fixed color="primary"> {{ 'loginpage_password' | translate }}</ion-label>
+<ion-input type="password" [(ngModel)]="userData.password"></ion-input>
+</ion-item>
+<ion-item no-lines>
+  <ion-label>{{ 'loginpage_rememberme' | translate }}</ion-label>
+  <ion-checkbox [(ngModel)]="remember"></ion-checkbox>
+</ion-item>
+</div>
+<div class="btn-login"><button ion-button round (click)="login()">&nbsp;{{ 'loginpage_loginbtn' | translate }}</button></div>
+<h6>{{ 'loginpage_dont' | translate }} <span><a href="#" (click)="onregister()">{{ 'loginpage_regnow' | translate }}</a></span></h6>
+</div>
+</ion-content>

@@ -1,0 +1,103 @@
+<ion-header >
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name="menu" style="color:#fff;"></ion-icon>
+    </button>
+    <ion-title style="color:#fff; ">{{ 'Cartpage_title' | translate }}</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="emptycart()" *ngIf="showcartdata">
+        <ion-icon name="md-trash" style="color:#fff;"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content no-padding class="background">
+  <div *ngIf="showtxt">
+    <ion-grid>
+      <ion-row class="emptycart">
+        <ion-col
+          ><img src="././assets/imgs/empty.png" />
+          <p>{{ 'Cartpage_cartempty' | translate }}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div *ngIf="showcartdata">
+    <div class="grids">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> {{ 'Cartpage_subtotal' | translate }} </ion-col>
+          <ion-col col-6>
+            <span style="float:right">{{ amount | number }} fg</span>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6> {{ 'Cartpage_delivery' | translate }} </ion-col>
+            <ion-col col-6 class="DeliveryCharges">
+              <span style="float:right">{{ shippingcost | number }} fg</span>
+            </ion-col>
+          </ion-row>
+        <ion-row *ngIf="couponprice != 0">
+          <ion-col col-6> {{ 'Cartpage_coupon' | translate }} | {{couponcode}}</ion-col>
+          <ion-col col-6 class="coupon">
+            <span style="float:right"> - {{ couponprice | number }} fg</span>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6> {{ 'Cartpage_total' | translate }} </ion-col>
+          <ion-col col-6 class="grandtotal">
+            <span style="float:right">{{ finalamount | number }} fg</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <hr>
+    <div class="coupons">
+      <h6><b>{{ 'Cartpage_coupon' | translate }}</b></h6>
+      <p *ngFor="let c of coupons; let c = index" (click)="applycoupon(c.couponcode,c.rate)">
+        {{c.couponcode}}<br>
+        <span> fg {{c.rate}} OFF</span>
+      </p>
+    </div>
+    <div class="cartitems">
+      <ion-grid>
+        <ion-row *ngFor="let c of finalcartdata; let itemno = index">
+          <ion-col><img src="{{baseUrlImage}}{{c.itemImage}}"></ion-col>
+          <ion-col class="noborder"> 
+            <ion-row>
+              <ion-col>{{ c.itemname }} </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col> {{ c.itemquantity }} {{ c.itemquantitytype }}</ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>Qty : {{c.Mquantity}}</ion-col>
+              </ion-row>
+          </ion-col>
+          <ion-col>
+            <ion-row style="border:none">
+            <ion-col>
+              {{ c.itemprice * c.Mquantity | number }} fg    
+            </ion-col>
+          </ion-row>
+          <ion-row style="border:none" class="updwnbtn">
+              <button ion-button color="danger" outline (click)="changeQty(itemno,-1)"><b>-</b></button>
+              <button ion-button color="danger" outline (click)="changeQty(itemno, 1)" ><b>+</b></button> 
+          </ion-row>
+        </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="footer" (click)="goToCheckout()" *ngIf="showcartdata">
+  <ion-toolbar color="warning">
+    <h6 style="margin-top:1rem;">
+      {{ 'Cartpage_confirm' | translate }}
+      <span style="float:right">{{ finalamount | number }} fg &nbsp;&nbsp;<ion-icon name="md-arrow-forward"></ion-icon>
+      </span>
+    </h6>
+  </ion-toolbar>
+</ion-footer>

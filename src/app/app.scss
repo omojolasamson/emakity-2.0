@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+  font-family: "nevis";
+  font-style: semi-bold;
+  font-weight: 600;
+  src: url("../assets/fonts/nevis.ttf");
+}
+
+.profile{
+  margin-left: 2.5rem;
+}
+
+.profile .col:nth-child(1){
+  text-align: center;
+}
+
+.profile img{
+  width: 9rem;
+}
+
+*{
+  font-family: Montserrat;
+}
+
+.bar-buttons{
+  color:#ffffff;
+}
+
+.toolbar-background {
+  border-color: #3ac746;
+  background: #3ac746;
+}
+
+.menubar{
+    background: #ffffff;
+}
+
+.dev{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 1.2rem;
+}
+
+.mainmenu{
+  margin-top: 4rem;
+}
+
+.menu-header {
+  background: #3ac746;
+  text-align: center;
+}
+
+.menu-header img {
+  width:8rem;
+  margin-top: 6rem;
+}
+
+.menu-header p {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: LeckerliOne;
+}
+
+.toolbar-title {
+  color: white;
+}
+
+.label{
+  margin:0;
+}
+
+.menuitem{
+  margin-top: 0.5rem;
+  background: #ffffff;
+}
+
+.menuitem .item-button{
+  font-family: Montserrat;
+  color: #3ac746;
+  margin-left: 1rem;
+  font-size: 1.8rem;
+}
+
+.menuitem p{
+  text-transform: capitalize;
+  color: #3ac746;
+  font-size: 1.5rem; 
+  font-family: Montserrat;
+  font-weight: 500;
+}
+
+.info{
+  padding: 20px;
+  position: absolute;
+  color:#ffffff;
+  bottom: 0;
+  font-size: 1.2rem;
+  font-family: Montserrat;
+}
+
+ion-icon {
+  &[class*="cs"] {
+      mask-size: contain;
+      mask-position: 50% 50%;
+      mask-repeat: no-repeat;
+      background: #3ac746;
+      width: 1em;
+      height: 1em;
+  }
+
+  .toolbar-title {
+    color: #ffffff;
+    font-family: Montserrat;
+  }
+  
+  .bar-button{
+    font-size: 4rem;
+  }
+
+  // custom icons
+  &[class*="cs-cod"] {
+      mask-image: url(../assets/imgs/cod.svg);
+  }&[class*="cs-pos"] {
+    mask-image: url(../assets/imgs/pos.svg);
+  }&[class*="cs-card"] {
+    mask-image: url(../assets/imgs/card.svg);
+  }&[class*="cs-paypal"] {
+    mask-image: url(../assets/imgs/paypal.svg);
+  }&[class*="cs-shop"] {
+    mask-image: url(../assets/imgs/shop.svg);
+  }&[class*="cs-razorpay"] {
+    mask-image: url(../assets/imgs/razorpay.svg);
+  }
+
+}
